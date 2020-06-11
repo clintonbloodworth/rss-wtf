@@ -1,0 +1,15 @@
+<svg viewBox="0 0 952 906" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    polyline {
+      fill: rgb(2, 22, 24); /* Keep this in sync with `--color-dark` in custom-properties.svelte.
+    }
+
+    @media (prefers-color-scheme: dark) {
+      fill: rgb(225, 225, 225); /* Keep this in sync with `--color-light` in custom-properties.svelte.
+    }
+  </style>
+
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <polyline points="182.107374 904.508497 295.361359 558.693052 0.471741852 345.491503 364.35918 346.339594 476 0 587.64082 346.339594 951.528258 345.491503 656.638641 558.693052 769.892626 904.508497 476 689.934707"></polyline>
+  </g>
+</svg>

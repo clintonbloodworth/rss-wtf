@@ -1,0 +1,20 @@
+{
+  "name": "rss-wtf-client",
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "headers": {
+        "feature-policy": "autoplay 'none'; camera 'none'; fullscreen 'none'; geolocation 'none'; microphone 'none'; payment 'none'; usb 'none'",
+        "link": "<https://api.rss.wtf>; rel=preconnect, <https://v1.userbase.com>; rel=preconnect",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block"
+      },
+      "dest": "/index.html"
+    }
+  ]
+}
