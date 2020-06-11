@@ -1,0 +1,39 @@
+@import "./functions.scss";
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == "big" {
+    // `calc(80rem - 1px)` is preferable but:
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=843584
+    @media (max-width: 1279px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "small" {
+    // `calc(64rem - 1px)` is preferable but:
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=843584
+    @media (max-width: 1023px) {
+      @content;
+    }
+  }
+}
+
+@mixin icon() {
+  border-radius: 1px;
+  display: block;
+  height: 1rem;
+  margin-right: rem(8px);
+  width: 1rem;
+}
+
+@mixin visually-hidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

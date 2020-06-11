@@ -1,0 +1,33 @@
+[build]
+  command = "NODE_ENV=production npm start"
+  publish = "distribution"
+
+[build.environment]
+  API_URL = "https://api.rss.wtf"
+  USERBASE_APP_ID = "a6761232-6222-4f06-876c-f4b47b69fa56"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    content-security-policy = "default-src rss.wtf; block-all-mixed-content; style-src 'unsafe-inline' rss.wtf; img-src rss.wtf *.rss.wtf; media-src *; frame-src *; font-src data:; connect-src rss.wtf *.rss.wtf https://*.userbase.com wss://*.userbase.com"
+
+    for = "/*"
+      feature-policy = "autoplay 'none'; camera 'none'; fullscreen 'none'; geolocation 'none'; microphone 'none'; payment 'none'; usb 'none'"
+      link = '''
+      </offline.js>; rel=prefetch; as=serviceworker; crossorigin=anonymous,
+      <https://services.rss.wtf>; rel=preconnect'''
+      referrer-policy = "no-referrer"
+      x-content-type-options = "nosniff"
+      x-frame-options = "DENY"
+      x-xss-protection = "1; mode=block"

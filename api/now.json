@@ -1,0 +1,63 @@
+{
+  "build": {
+    "env": {
+      "NPM_TOKEN": "@npm_token"
+    }
+  },
+  "env": {
+    "ACCESS_CONTROL_ALLOW_ORIGIN": "https://rss.wtf",
+    "ARTICLE_CHARACTER_MINIMUM": "50",
+    "NODE_ENV": "production",
+    "SELF_URL": "https://api.rss.wtf",
+    "SCALYR_TOKEN": "@scalyr_token"
+  },
+  "routes": [
+    {
+      "dest": "api/alive.js",
+      "methods": [
+        "HEAD"
+      ],
+      "src": "/alive"
+    },
+    {
+      "dest": "api/image.js",
+      "methods": [
+        "GET"
+      ],
+      "src": "/image"
+    },
+    {
+      "dest": "api/favicon.js",
+      "methods": [
+        "GET"
+      ],
+      "src": "/favicon"
+    },
+    {
+      "dest": "api/article.js",
+      "methods": [
+        "GET"
+      ],
+      "src": "/article"
+    },
+    {
+      "dest": "api/feeds.js",
+      "methods": [
+        "GET"
+      ],
+      "src": "/feeds"
+    },
+    {
+      "dest": "api/feed.js",
+      "methods": [
+        "GET"
+      ],
+      "src": "/feed"
+    },
+    {
+      "src": "/",
+      "status": 404
+    }
+  ],
+  "version": 2
+}

@@ -1,0 +1,8 @@
+# Directories
+databases
+node_modules
+
+# Files
+.DS_Store
+.env
+npm-debug.log
