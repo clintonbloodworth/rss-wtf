@@ -1,0 +1,19 @@
+{
+  "name": "WTF",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "512x512",
+      "src": "https://rss.wtf/favicon.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "https://rss.wtf/favicon.png",
+      "type": "image/png"
+    }
+  ],
+  "scope": "/",
+  "start_url": "/?source=pwa"
+}

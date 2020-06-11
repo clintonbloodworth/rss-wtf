@@ -1,0 +1,39 @@
+[build]
+  command = "NODE_ENV=production npm start"
+  ignore = "git diff --quiet HEAD^ HEAD client/"
+
+[build.environment]
+  ALIVE_CHECK_INTERVAL = "10000"
+  API_URL = "https://api.rss.wtf"
+  ARTICLES_UPDATE_INTERVAL = "3600000" # 1 hour
+  FEEDS_UPDATE_INTERVAL = "28800000" # 8 hours
+  PRUNE_INTERVAL = "288000000" # 8 hours
+  USERBASE_APP_ID = "98455962-2eac-497a-8f1e-59069a972d38"
+
+[context.beta.environment]
+  API_URL = "https://beta.api.rss.wtf"
+  USERBASE_APP_ID = "a4f84948-df5c-43fc-b070-0913ac633bec"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    content-security-policy = "default-src rss.wtf beta.rss.wtf; block-all-mixed-content; style-src 'unsafe-inline' rss.wtf beta.rss.wtf; script-src 'unsafe-inline' rss.wtf beta.rss.wtf; img-src *; media-src *; frame-src *; font-src data:; connect-src rss.wtf *.rss.wtf beta.rss.wtf *.beta.rss.wtf https://*.userbase.com wss://*.userbase.com"
+
+    for = "/*"
+      feature-policy = "autoplay 'none'; camera 'none'; fullscreen 'none'; geolocation 'none'; microphone 'none'; payment 'none'; usb 'none'"
+      link = "<https://api.rss.wtf>; rel=preconnect, <https://v1.userbase.com>; rel=preconnect"
+      referrer-policy = "no-referrer"
+      x-content-type-options = "nosniff"
+      x-frame-options = "DENY"
+      x-xss-protection = "1; mode=block"
