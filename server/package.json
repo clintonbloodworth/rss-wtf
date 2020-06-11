@@ -1,0 +1,56 @@
+{
+  "dependencies": {
+    "@mozilla/readability": "^0.3.0",
+    "bytes": "^3.1.0",
+    "caporal": "^1.4.0",
+    "crypto-random-string": "^3.3.0",
+    "file-type": "^16.0.1",
+    "got": "^11.8.1",
+    "highlight.js": "^10.5.0",
+    "html-minifier": "^4.0.0",
+    "image-size": "^0.9.3",
+    "is-relative-url": "^3.0.0",
+    "is-svg": "^4.2.1",
+    "is-url": "^1.2.4",
+    "jsdom": "^16.4.0",
+    "ow": "^0.21.0",
+    "rss-parser": "^3.10.0",
+    "sanitize-html": "^2.3.0",
+    "srcset": "^3.0.0",
+    "svg-tags": "^1.0.0",
+    "url-join": "^4.0.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "ava": "^3.14.0",
+    "babel-eslint": "^10.1.0",
+    "dotenv-extended": "^2.9.0",
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-watch": "^7.0.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "per-env": "^1.0.2",
+    "prettier": "^2.2.1",
+    "vercel": "^21.0.1"
+  },
+  "engines": {
+    "node": "^12"
+  },
+  "name": "@wtf/server",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write '**/*.(html|json|md)'",
+    "format:comment": "https://github.com/prettier/prettier/issues/8233#issuecomment-698884492",
+    "lint": "dotenv-extended per-env",
+    "lint:development": "esw *.js library/**/*.js --color --fix --watch",
+    "lint:production": "esw *.js library/**/*.js --color --fix",
+    "precommit": "lint-staged",
+    "start": "vercel dev --listen 3001",
+    "test": "dotenv-extended per-env",
+    "test:development": "ava --watch",
+    "test:production": "ava",
+    "vercel": "vercel"
+  }
+}
