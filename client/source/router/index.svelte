@@ -36,9 +36,9 @@
     background-size: 50px 50px;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: calc(var(--vvh) * 100);
     position: relative;
-    width: 100vw;
+    width: calc(var(--vvw) * 100);
 
     @keyframes background-position {
       0% {

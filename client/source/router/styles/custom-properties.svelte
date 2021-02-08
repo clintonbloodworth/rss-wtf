@@ -43,6 +43,9 @@
   import endpoints from "library/endpoints";
   import isOffline from "stores/offline";
 
+  setVisualViewport();
+  (window.visualViewport || window).addEventListener("resize", setVisualViewport);
+
   // Hoefler's "Production" mode works using a stylesheet `<link>` whose
   // `href` is a typrography.com endpoint. That endpoint returns a
   // stylesheet with a bunch of `@font-face` rules. The rule URLs point
@@ -79,5 +82,12 @@
         document.documentElement.style.setProperty("--font-monospace", "monospace");
         document.documentElement.style.setProperty("--font-sans-serif", "serif");
       });
+  }
+
+  function setVisualViewport() {
+    const vh = (window.visualViewport && window.visualViewport.height || window.innerHeight) * 0.01;
+    const vw = (window.visualViewport && window.visualViewport.width || window.innerWidth) * 0.01;
+    window.document.documentElement.style.setProperty("--vvh", `${vh}px`);
+    window.document.documentElement.style.setProperty("--vvw", `${vw}px`);
   }
 </script>
