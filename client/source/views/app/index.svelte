@@ -64,6 +64,10 @@
     scroll-snap-align: start;
     scroll-snap-margin-left: var(--spacing-left);  /* https://bugs.webkit.org/show_bug.cgi?id=189265 */
     scroll-snap-type: block proximity;
+
+    @media (--small) {
+      --spacing-left: var(--spacing-small);
+    }
   }
 </style>
 

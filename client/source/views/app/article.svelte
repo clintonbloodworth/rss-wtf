@@ -76,7 +76,7 @@
 
     @media (--small) {
       margin-bottom: var(--spacing-small);
-      margin-top: var(--spacing-small);
+      margin-top: 0px;
     }
   }
 </style>

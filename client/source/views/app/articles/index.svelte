@@ -105,12 +105,12 @@
     }
 
     @media (--small) {
-      --scroll-margin-left: var(--spacing-small);
+      --scroll-margin-left: 0px;
 
       padding-left: 0px;
       padding-right: 0px;
       padding-top: var(--spacing-small);
-      scroll-snap-align: start;
+      scroll-snap-align: center;
       width: calc(100% - var(--spacing-small) * 2);
     }
   }

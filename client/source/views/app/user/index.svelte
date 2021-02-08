@@ -38,6 +38,7 @@
       --spacing-left: var(--spacing-small);
 
       margin-left: 0px;
+      padding-right: var(--spacing-small);
       padding-top: var(--spacing-small);
     }
   }

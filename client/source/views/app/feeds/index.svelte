@@ -30,6 +30,10 @@
   .container {
     grid-area: feeds;
     padding-right: var(--spacing-large);
+
+    @media (--small) {
+      padding-right: var(--spacing-small);
+    }
   }
 
   .header {
