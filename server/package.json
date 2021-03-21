@@ -10,7 +10,7 @@
     "html-minifier": "^4.0.0",
     "image-size": "^0.9.3",
     "is-relative-url": "^3.0.0",
-    "is-svg": "^4.2.1",
+    "is-svg": "^4.2.2",
     "is-url": "^1.2.4",
     "jsdom": "^16.4.0",
     "ow": "^0.23.0",
